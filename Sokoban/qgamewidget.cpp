@@ -7,13 +7,13 @@
 #include "motionbackground.h"
 
 QGameWidget::QGameWidget(QWidget *parent) :
-    QGLWidget(parent), _listener(NULL)
+    QOpenGLWidget(parent), _listener(NULL)
 {
     setFocus();
     setMouseTracking(true);
-    setAutoBufferSwap(false);
+//    setAutoBufferSwap(false);
     installEventFilter(this);
-    connect(&timer, SIGNAL(timeout()), this, SLOT(updateGL()));
+    connect(&timer, SIGNAL(timeout()), this, SLOT(update()));
     timer.start(20);
 }
 
@@ -80,7 +80,8 @@ QGameWidget::paintGL()
     _painter = &painter;
     _listener->onPaint();
     painter.end();
-    swapBuffers();
+    update();
+//    swapBuffers();
 }
 
 void QGameWidget::mousePressEvent(QMouseEvent *event)
@@ -88,7 +89,7 @@ void QGameWidget::mousePressEvent(QMouseEvent *event)
     if (_listener != NULL)
         _listener->onMousePress(
                     qtMouseButtons2MouseListenerButtons(event->buttons()),
-                    event->x()*800.0/width(), event->y()*600.0/height());
+                    event->position().x()*800.0/width(), event->position().y()*600.0/height());
 }
 
 void QGameWidget::mouseReleaseEvent(QMouseEvent *event)
@@ -96,7 +97,7 @@ void QGameWidget::mouseReleaseEvent(QMouseEvent *event)
     if (_listener != NULL)
         _listener->onMouseRelease(
                     qtMouseButtons2MouseListenerButtons(event->buttons()),
-                    event->x()*800.0/width(), event->y()*600.0/height());
+                    event->position().x()*800.0/width(), event->position().y()*600.0/height());
 }
 
 MouseListener::Buttons
@@ -119,7 +120,7 @@ bool QGameWidget::eventFilter(QObject *, QEvent *event)
             QMouseEvent *event2 = static_cast<QMouseEvent*>(event);
             _listener->onMouseMove(
                         qtMouseButtons2MouseListenerButtons(event2->buttons()),
-                        event2->x()*800.0/width(), event2->y()*600.0/height());
+                        event2->position().x()*800.0/width(), event2->position().y()*600.0/height());
         }
         return true;
     }

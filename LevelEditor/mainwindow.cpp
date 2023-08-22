@@ -266,7 +266,7 @@ void MainWindow::openFromFile(QString fileName)
 
 void MainWindow::showError(QString msg)
 {
-    QMessageBox msgBox(QMessageBox::Critical, tr("Error"), msg, 0, this);
+    QMessageBox msgBox(QMessageBox::Critical, tr("Error"), msg, QMessageBox::Ok, this);
     msgBox.addButton(tr("&Ok"), QMessageBox::AcceptRole);
     msgBox.exec();
 }

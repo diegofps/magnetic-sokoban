@@ -121,8 +121,8 @@ void MapEditor::onMouseHitEvent(QMouseEvent *event)
         if (currentRow < 0 || currentRow >= (int)_pencils.size())
             return;
 
-        int x = event->x() / 48;
-        int y = event->y() / 48;
+        int x = event->position().x() / 48;
+        int y = event->position().y() / 48;
 
         MapPencil *pencil = _pencils.at(currentRow);
         MapObject obj1 = map->at(x, y);
@@ -139,8 +139,8 @@ void MapEditor::onMouseHitEvent(QMouseEvent *event)
 
     else if (event->buttons() & Qt::RightButton)
     {
-        int x = event->x() / 48;
-        int y = event->y() / 48;
+        int x = event->position().x() / 48;
+        int y = event->position().y() / 48;
 
         MapObject obj1 = map->at(x, y);
         MapObject obj2 = obj1;

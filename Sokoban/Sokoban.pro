@@ -4,10 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT       += opengl
+QT       += core gui openglwidgets widgets
 
-TARGET = Sokoban
+TARGET   = Sokoban
 TEMPLATE = app
 
 

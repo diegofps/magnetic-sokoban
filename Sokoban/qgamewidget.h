@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <QTimer>
-#include <QGLWidget>
+#include <QOpenGLWidget>
 #include <QPainter>
 
 #include "graphics.h"
@@ -15,7 +15,7 @@ class MotionBackground;
 class QGameWidgetListener;
 class QMouseEvent;
 
-class QGameWidget : public QGLWidget, public Graphics
+class QGameWidget : public QOpenGLWidget, public Graphics
 {
 
 public:
