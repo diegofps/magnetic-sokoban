@@ -10,29 +10,41 @@ As of now, this game is not deployed anywhere. To execute it you will need to in
 
 # Game Rules
 
-On a base level, it works just like a normal Sokoban game. You can use the arrow keys to move the robot around and pull the boxes.
+<!-- On a base level, it works just like a normal Sokoban game. You can use the arrow keys to move the robot around and pull the boxes.
 
 ![Gameplay](imgs/game1.gif)
 
 A wall/box face colored in red or blue will indicate that the face is charged positively or negatively, respectively. If you connect two faces with the same colors they will try to repel each other.
 
-![Gameplay](imgs/game2.gif)
+![Gameplay](imgs/game2.gif) -->
 
-Some puzzle will require this property to be solved.
+| ![Gameplay](imgs/game1.gif) | ![Gameplay](imgs/game2.gif) |
+| :-: | :-: |
+| On a base level, it works just like a normal Sokoban game. You can use the arrow keys to move the robot around and pull the boxes to the green spots. | A face colored in red or blue will indicate that the face is charged positively or negatively, respectively. If you connect two faces with the same colors they will try to repel each other. |
+
+<!-- Some puzzle will require this property to be solved.
 
 ![Gameplay](imgs/game5.gif)
 
 Similarly, if you connect two faces with different colors they will connect to each other and you won't be able to move them anymore.
 
-![Gameplay](imgs/game3.gif)
+![Gameplay](imgs/game3.gif) -->
 
-A yellow face will not interact with any other face.
+| ![Gameplay](imgs/game5.gif) | ![Gameplay](imgs/game3.gif) |
+| :-: | :-: |
+| Some puzzle will require repelling boxes in order to be solved. | Similarly, if you connect two faces with different colors they will connect to each other and you won't be able to move them anymore. |
+
+| ![Gameplay](imgs/game6.gif) | ![Gameplay](imgs/game7.gif) |
+| :-: | :-: |
+| A yellow face will not interact with any other face. | A gray face is made of metal. It will lock both red and blue faces. |
+
+<!-- A yellow face will not interact with any other face.
 
 ![Gameplay](imgs/game6.gif)
 
 A gray face is made of metal. It will lock both red and blue faces.
 
-![Gameplay](imgs/game7.gif)
+![Gameplay](imgs/game7.gif) -->
 
 # Level Editor
 
